@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "879902195381",
+    "firebase_url": "https://pushnotificationapp-170905.firebaseio.com",
+    "project_id": "pushnotificationapp-170905",
+    "storage_bucket": "pushnotificationapp-170905.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879902195381:android:bd76f959ebbb0aeb",
+        "android_client_info": {
+          "package_name": "com.app.darshan.pushnotificationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879902195381-ehcjn29vsg96nlloaq9a7ujmvtnajflm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmsGj6RB9-SalMfQJtG3B7fMie7bcrieY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

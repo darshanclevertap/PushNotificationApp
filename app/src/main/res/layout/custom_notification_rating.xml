@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:background="@android:color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="1dp" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel_lyt">
+
+        <ImageView android:id="@+id/image_app"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_alignParentLeft="true"
+            android:visibility="visible"
+            android:layout_marginRight="10dp" />
+
+        <TextView android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:layout_toRightOf="@+id/image_app"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/colorPrimaryDark"
+            style="Custom Notification Title" />
+
+        <TextView android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_toRightOf="@+id/image_app"
+            android:text="Text"
+            android:visibility="visible"
+            android:layout_below="@id/title"
+            style="Custom Notification Text" />
+
+    </RelativeLayout>
+    <ImageView android:id="@+id/image_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_lyt"
+        android:layout_marginLeft="20dp"
+        android:visibility="invisible"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80dp"
+        android:padding="0dp"
+        android:layout_below="@+id/image_pic"
+        android:id="@+id/rating_lyt"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/star1"
+            android:src="@drawable/outline_star_1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"/>
+        <ImageView
+            android:id="@+id/star2"
+            android:src="@drawable/outline_star_1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"/>
+        <ImageView android:id="@+id/star3"
+            android:src="@drawable/outline_star_1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"/>
+        <ImageView
+            android:id="@+id/star4"
+            android:src="@drawable/outline_star_1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"/>
+        <ImageView
+            android:id="@+id/star5"
+            android:src="@drawable/outline_star_1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"/>
+
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/submitBtn"
+        android:layout_below="@+id/rating_lyt"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimaryDark"/>
+</RelativeLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center_vertical|center_horizontal"
+    android:layout_height="match_parent"
+    tools:context="com.app.darshan.pushnotificationapp.ButtonActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingText"
+        android:text="Your Rating Is"
+        android:textSize="28sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingNumber"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/ratingText"
+        android:layout_marginLeft="70dp"
+        android:textSize="24sp"
+        android:text="5"/>
+</RelativeLayout>

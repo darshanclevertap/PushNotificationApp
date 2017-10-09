@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_lyt">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/book_img"
+        android:src="@mipmap/ic_launcher" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/book_img"
+        android:id="@+id/book_name"
+        android:textSize="16sp"
+        android:layout_marginLeft="10dp"
+        android:text="Book Name"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/book_name"
+        android:layout_toRightOf="@+id/book_img"
+        android:textSize="16sp"
+        android:id="@+id/book_author"
+        android:layout_marginLeft="10dp"
+        android:text="Book Author"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="16sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/book_author"
+        android:layout_toRightOf="@+id/book_img"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/book_publisher"
+        android:text="Book Publisher"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/book_publisher"
+        android:layout_toRightOf="@+id/book_img"
+        android:layout_marginLeft="10dp"
+        android:textSize="16sp"
+        android:id="@+id/book_price"
+        android:text="Book Price"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_lyt"
+        android:textSize="22sp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:id="@+id/addtoCart"
+        android:background="@color/colorAccent"
+        android:text="Add To Cart"/>
+</RelativeLayout>
