@@ -76,7 +76,7 @@ public class BookListAdapter extends RecyclerView.Adapter {
                 addToCart.put("Book Price", Integer.parseInt(selected.getPrice()));
                 addToCart.put("Date", new java.util.Date());
 
-                cleverTapAPI.event.push("Add to Cart", addToCart);
+                cleverTapAPI.event.push("Added to Cart", addToCart);
                 Leanplum.track("Add to Cart",addToCart);
             }
         });
