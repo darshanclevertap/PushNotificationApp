@@ -1,1 +1,1 @@
-Internal app for Testing CleverTap SDKs
+Internal app for Testing CleverTap Android SDKs
