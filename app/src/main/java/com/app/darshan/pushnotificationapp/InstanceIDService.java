@@ -2,7 +2,6 @@ package com.app.darshan.pushnotificationapp;
 
 import android.util.Log;
 
-import com.clevertap.android.sdk.CleverTapAPI;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 

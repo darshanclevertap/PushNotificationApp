@@ -1,10 +1,7 @@
 package com.app.darshan.pushnotificationapp;
 
-import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import java.io.Serializable;
 
 /**
  * Created by darshanpania on 06/07/17.

@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.1'
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.app.darshan.pushnotificationapp"
         minSdkVersion 18
@@ -32,17 +32,18 @@ dependencies {
     })
     //compile 'com.clevertap.android:clevertap-android-sdk:3.1.6'
     compile 'com.clevertap.android:clevertap-android-sdk:3.1.7'
-    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:appcompat-v7:26.0.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.firebase:firebase-messaging:11.2.0'
     compile 'com.google.android.gms:play-services-gcm:11.2.0'
     compile 'com.google.android.gms:play-services-auth:11.2.0'
     compile 'com.google.android.gms:play-services-identity:11.2.0'
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:recyclerview-v7:23.0.1'
+    compile 'com.android.support:recyclerview-v7:26.0.1'
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
     compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
-    compile 'com.android.support:support-v4:23.0.1'
+    //compile 'com.android.support:support-v4:23.0.1'
+    compile 'com.android.support:support-v4:26.0.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
     compile "com.mixpanel.android:mixpanel-android:5.+"
     compile 'com.leanplum:Leanplum:2.2.2'

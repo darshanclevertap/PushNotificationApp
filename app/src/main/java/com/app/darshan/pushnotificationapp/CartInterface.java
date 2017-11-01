@@ -7,6 +7,5 @@ package com.app.darshan.pushnotificationapp;
 public interface CartInterface {
 
     public void addToCart(Books book);
-    public void removeFromCart(Books book);
     public void removeAllFromCart();
 }

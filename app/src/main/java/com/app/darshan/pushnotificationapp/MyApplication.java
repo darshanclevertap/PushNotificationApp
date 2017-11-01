@@ -2,6 +2,7 @@ package com.app.darshan.pushnotificationapp;
 
 import android.app.Application;
 import android.os.Handler;
+import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
 import com.bumptech.glide.module.AppGlideModule;
@@ -26,7 +27,7 @@ import static com.app.darshan.pushnotificationapp.MainActivity.cleverTapAPI;
  * Created by darshanpania on 16/06/17.
  */
 
-public class MyApplication extends Application {
+public class MyApplication extends MultiDexApplication {
 
     @Variable
     public static String welcomeMessage = "Welcome to Leanplum!";

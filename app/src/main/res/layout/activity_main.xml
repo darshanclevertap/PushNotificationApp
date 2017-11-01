@@ -52,6 +52,22 @@
         android:id="@+id/button3"
         android:layout_below="@+id/button2"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="onUserLogin1"
+        android:visibility="visible"
+        android:id="@+id/button4"
+        android:layout_below="@+id/sign_in_button"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="onUserLogin2"
+        android:visibility="visible"
+        android:id="@+id/button5"
+        android:layout_below="@+id/button4"
+        />
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
         android:layout_below="@+id/button3"

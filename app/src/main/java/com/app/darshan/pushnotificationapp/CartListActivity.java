@@ -7,19 +7,13 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.clevertap.android.sdk.CleverTapAPI;
 import com.clevertap.android.sdk.exceptions.InvalidEventNameException;
-import com.leanplum.Leanplum;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,7 +21,6 @@ import java.util.HashMap;
 import es.dmoral.toasty.Toasty;
 
 import static com.app.darshan.pushnotificationapp.MainActivity.cleverTapAPI;
-import static com.app.darshan.pushnotificationapp.MainActivity.mixpanel;
 
 /**
  * Created by darshanpania on 07/07/17.

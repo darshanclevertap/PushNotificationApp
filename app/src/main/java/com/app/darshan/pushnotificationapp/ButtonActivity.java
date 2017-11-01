@@ -1,19 +1,8 @@
 package com.app.darshan.pushnotificationapp;
 
-import android.app.NotificationManager;
-import android.content.Intent;
-import android.net.Uri;
-import android.net.UrlQuerySanitizer;
-import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
-
-import java.util.Date;
-import java.util.HashMap;
-
-import static com.app.darshan.pushnotificationapp.MainActivity.cleverTapAPI;
 
 public class ButtonActivity extends AppCompatActivity {
 

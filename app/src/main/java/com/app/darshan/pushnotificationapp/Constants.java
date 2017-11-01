@@ -1,13 +1,8 @@
 package com.app.darshan.pushnotificationapp;
 
 import android.graphics.Bitmap;
-import android.os.Handler;
 import android.util.LruCache;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-import static com.app.darshan.pushnotificationapp.MainActivity.cleverTapAPI;
 
 /**
  * Created by darshanpania on 05/07/17.

@@ -1,32 +1,14 @@
 package com.app.darshan.pushnotificationapp;
 
-import android.app.Notification;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Handler;
-import android.provider.ContactsContract;
-import android.provider.Settings;
-import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RemoteViews;
 import android.widget.TextView;
 
 import com.amplitude.api.Amplitude;
@@ -34,19 +16,8 @@ import com.clevertap.android.sdk.CleverTapAPI;
 import com.clevertap.android.sdk.exceptions.CleverTapMetaDataNotFoundException;
 import com.clevertap.android.sdk.exceptions.CleverTapPermissionsNotSatisfied;
 import com.facebook.AccessToken;
-import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.HttpMethod;
-import com.facebook.Profile;
-import com.facebook.login.LoginManager;
-import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
-import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -54,28 +25,17 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.leanplum.Leanplum;
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
-//import com.squareup.haha.perflib.Main;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.UUID;
 
 import es.dmoral.toasty.Toasty;
 
@@ -83,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static CleverTapAPI cleverTapAPI;
     TextView title,body;
-    Button button,button1,button2,button3;
+    Button button,button1,button2,button3,button4,button5;
     private static String TAG = "PushLog";
     ArrayList<Books> booksArrayList = new ArrayList<>();
     //RemoteViews contentView;
@@ -156,6 +116,8 @@ public class MainActivity extends AppCompatActivity {
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
+        button4 = (Button) findViewById(R.id.button4);
+        button5 = (Button) findViewById(R.id.button5);
         SignInButton signInButton = (SignInButton) findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
         signInButton.setOnClickListener(new View.OnClickListener() {
@@ -324,6 +286,75 @@ public class MainActivity extends AppCompatActivity {
         });
         LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile","email"));*/
 
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // each of the below mentioned fields are optional
+// with the exception of one of Identity, Email, FBID or GPID
+                HashMap<String, Object> profileUpdate = new HashMap<String, Object>();
+                profileUpdate.put("Name", "Jack Montana");    // String
+                profileUpdate.put("Identity", 1);      // String or number
+//                profileUpdate.put("Email", "jack@gmail.com"); // Email address of the user
+                profileUpdate.put("Phone", "+14155551234");   // Phone (with the country code, starting with +)
+                profileUpdate.put("Gender", "M");             // Can be either M or F
+                profileUpdate.put("Employed", "Y");           // Can be either Y or N
+                profileUpdate.put("Education", "Graduate");   // Can be either Graduate, College or School
+                profileUpdate.put("Married", "Y");            // Can be either Y or N
+                profileUpdate.put("DOB", new Date());         // Date of Birth. Set the Date object to the appropriate value first
+                profileUpdate.put("Age", 28);                 // Not required if DOB is set
+
+// optional fields. controls whether the user will be sent email, push etc.
+                profileUpdate.put("MSG-email", false);        // Disable email notifications
+                profileUpdate.put("MSG-push", true);          // Enable push notifications
+                profileUpdate.put("MSG-sms", false);          // Disable SMS notifications
+
+                ArrayList<String> stuff = new ArrayList<String>();
+                stuff.add("bag");
+                stuff.add("shoes");
+                profileUpdate.put("MyStuff", stuff);                        //ArrayList of Strings
+
+                String[] otherStuff = {"Jeans","Perfume"};
+                profileUpdate.put("MyStuff", otherStuff);                   //String Array
+
+
+                cleverTapAPI.onUserLogin(profileUpdate);
+
+            }
+        });
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // each of the below mentioned fields are optional
+// with the exception of one of Identity, Email, FBID or GPID
+                HashMap<String, Object> profileUpdate = new HashMap<String, Object>();
+                profileUpdate.put("Name", "Jacky Montana");    // String
+                profileUpdate.put("Identity", 2);      // String or number
+//                profileUpdate.put("Email", "jack@gmail.com"); // Email address of the user
+                profileUpdate.put("Phone", "+14155551234");   // Phone (with the country code, starting with +)
+                profileUpdate.put("Gender", "M");             // Can be either M or F
+                profileUpdate.put("Employed", "Y");           // Can be either Y or N
+                profileUpdate.put("Education", "Graduate");   // Can be either Graduate, College or School
+                profileUpdate.put("Married", "Y");            // Can be either Y or N
+                profileUpdate.put("DOB", new Date());         // Date of Birth. Set the Date object to the appropriate value first
+                profileUpdate.put("Age", 28);                 // Not required if DOB is set
+
+// optional fields. controls whether the user will be sent email, push etc.
+                profileUpdate.put("MSG-email", false);        // Disable email notifications
+                profileUpdate.put("MSG-push", true);          // Enable push notifications
+                profileUpdate.put("MSG-sms", false);          // Disable SMS notifications
+
+                ArrayList<String> stuff = new ArrayList<String>();
+                stuff.add("bag");
+                stuff.add("shoes");
+                profileUpdate.put("MyStuff", stuff);                        //ArrayList of Strings
+
+                String[] otherStuff = {"Jeans","Perfume"};
+                profileUpdate.put("MyStuff", otherStuff);                   //String Array
+
+
+                cleverTapAPI.onUserLogin(profileUpdate);
+            }
+        });
         Intent intent = getIntent();
         if(intent!=null){
             String titleString = intent.getStringExtra("title");

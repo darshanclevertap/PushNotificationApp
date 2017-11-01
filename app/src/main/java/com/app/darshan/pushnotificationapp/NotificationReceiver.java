@@ -2,11 +2,9 @@ package com.app.darshan.pushnotificationapp;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.appwidget.AppWidgetManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
 

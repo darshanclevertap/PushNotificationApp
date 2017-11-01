@@ -11,7 +11,6 @@ import android.os.Looper;
 import android.util.Log;
 
 import com.clevertap.android.sdk.*;
-//import com.clevertap.android.sdk.Logger;
 import com.clevertap.android.sdk.exceptions.CleverTapException;
 
 import java.util.Date;
