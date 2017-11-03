@@ -91,11 +91,6 @@ public class BookListActivity extends AppCompatActivity implements CartInterface
     }
 
     @Override
-    public void removeFromCart(Books book) {
-        cartList.remove(book);
-    }
-
-    @Override
     public void removeAllFromCart() {
 
         cartList.clear();

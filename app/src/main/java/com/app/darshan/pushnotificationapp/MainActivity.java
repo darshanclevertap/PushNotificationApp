@@ -187,181 +187,17 @@ public class MainActivity extends AppCompatActivity {
                 stopService(intent);
             }
         });
-//        callbackManager = CallbackManager.Factory.create();
-//        LoginButton loginButton = (LoginButton)findViewById(R.id.login_button);
-//
-//        if(AccessToken.getCurrentAccessToken()==null && Profile.getCurrentProfile()==null ) {
-//            loginButton.setReadPermissions("email", "public_profile");
-//
-//            loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-//                @Override
-//                public void onSuccess(LoginResult loginResult) {
-//                    // App code
-//                    Log.e("Inside registercallback", loginResult.toString());
-//                    accessToken = loginResult.getAccessToken();
-//                    GraphRequest request = GraphRequest.newMeRequest(accessToken, new GraphRequest.GraphJSONObjectCallback() {
-//
-//                        @Override
-//                        public void onCompleted(JSONObject object, GraphResponse response) {
-//                            Log.e("MainAct", response.toString());
-//                            // Get facebook data from login
-//                            getFacebookData(object);
-//                        }
-//                    });
-//                    Bundle parameters = new Bundle();
-//                    parameters.putString("fields", "id, first_name, last_name, email,gender, birthday, location,relationship_status"); // Parámetros que pedimos a facebook
-//                    request.setParameters(parameters);
-//                    request.executeAsync();
-//                    button.setVisibility(View.VISIBLE);
-//                    cleverTapAPI.event.push("Facebook Login");
-//                    mixpanel.track("Facebook Login");
-//                    Amplitude.getInstance().logEvent("Facebook Login");
-////                    sharedPreferences = MainActivity.this.getSharedPreferences("FacebookLogin", Context.MODE_PRIVATE);
-////                    editor = sharedPreferences.edit();
-////                    editor.putString("FBAccessToken", accessToken.getToken());
-////                    editor.apply();
-//                }
-//
-//                @Override
-//                public void onCancel() {
-//                    // App code
-//                }
-//
-//                @Override
-//                public void onError(FacebookException exception) {
-//                    // App code
-//                }
-//            });
-//
-//        }else{
-//            button.setVisibility(View.VISIBLE);
-//        }
-//
-//        if(AccessToken.getCurrentAccessToken()!=null && Profile.getCurrentProfile()!=null){
-//            loginButton.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    LoginManager.getInstance().logOut();
-//                    button.setVisibility(View.GONE);
-//                }
-//            });
-//        }
-
-
-        //updateWithToken(accessToken);
-        /*LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                // App code
-                Log.e("Inside loginmanager",loginResult.toString());
-                Log.e("Inside loginmanager",loginResult.getAccessToken().getUserId());
-                AccessToken accessToken = loginResult.getAccessToken();
-                GraphRequest request = GraphRequest.newMeRequest(accessToken, new GraphRequest.GraphJSONObjectCallback() {
-
-                    @Override
-                    public void onCompleted(JSONObject object, GraphResponse response) {
-                        Log.e("MainAct", response.toString());
-                        // Get facebook data from login
-                        getFacebookData(object);
-                    }
-                });
-                Bundle parameters = new Bundle();
-                parameters.putString("fields", "id, first_name, last_name, email,gender, birthday, location,relationship_status"); // Parámetros que pedimos a facebook
-                request.setParameters(parameters);
-                request.executeAsync();
-                button.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void onCancel() {
-                // App code
-                button.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void onError(FacebookException exception) {
-                // App code
-                button.setVisibility(View.GONE);
-            }
-        });
-        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile","email"));*/
-
-        button4.setOnClickListener(new View.OnClickListener() {
+        MyOnClickListener myOnClickListener = new MyOnClickListener("Click Button", MainActivity.this){
             @Override
             public void onClick(View v) {
-                // each of the below mentioned fields are optional
-// with the exception of one of Identity, Email, FBID or GPID
-                HashMap<String, Object> profileUpdate = new HashMap<String, Object>();
-                profileUpdate.put("Name", "Jack Montana");    // String
-                profileUpdate.put("Identity", 1);      // String or number
-//                profileUpdate.put("Email", "jack@gmail.com"); // Email address of the user
-                profileUpdate.put("Phone", "+14155551234");   // Phone (with the country code, starting with +)
-                profileUpdate.put("Gender", "M");             // Can be either M or F
-                profileUpdate.put("Employed", "Y");           // Can be either Y or N
-                profileUpdate.put("Education", "Graduate");   // Can be either Graduate, College or School
-                profileUpdate.put("Married", "Y");            // Can be either Y or N
-                profileUpdate.put("DOB", new Date());         // Date of Birth. Set the Date object to the appropriate value first
-                profileUpdate.put("Age", 28);                 // Not required if DOB is set
-
-// optional fields. controls whether the user will be sent email, push etc.
-                profileUpdate.put("MSG-email", false);        // Disable email notifications
-                profileUpdate.put("MSG-push", true);          // Enable push notifications
-                profileUpdate.put("MSG-sms", false);          // Disable SMS notifications
-
-                ArrayList<String> stuff = new ArrayList<String>();
-                stuff.add("bag");
-                stuff.add("shoes");
-                profileUpdate.put("MyStuff", stuff);                        //ArrayList of Strings
-
-                String[] otherStuff = {"Jeans","Perfume"};
-                profileUpdate.put("MyStuff", otherStuff);                   //String Array
-
-
-                cleverTapAPI.onUserLogin(profileUpdate);
-
+                super.onClick(v);
+                Intent webIntent = new Intent(MainActivity.this, ButtonActivity.class);
+                startActivity(webIntent);
             }
-        });
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // each of the below mentioned fields are optional
-// with the exception of one of Identity, Email, FBID or GPID
-                HashMap<String, Object> profileUpdate = new HashMap<String, Object>();
-                profileUpdate.put("Name", "Jacky Montana");    // String
-                profileUpdate.put("Identity", 2);      // String or number
-//                profileUpdate.put("Email", "jack@gmail.com"); // Email address of the user
-                profileUpdate.put("Phone", "+14155551234");   // Phone (with the country code, starting with +)
-                profileUpdate.put("Gender", "M");             // Can be either M or F
-                profileUpdate.put("Employed", "Y");           // Can be either Y or N
-                profileUpdate.put("Education", "Graduate");   // Can be either Graduate, College or School
-                profileUpdate.put("Married", "Y");            // Can be either Y or N
-                profileUpdate.put("DOB", new Date());         // Date of Birth. Set the Date object to the appropriate value first
-                profileUpdate.put("Age", 28);                 // Not required if DOB is set
-
-// optional fields. controls whether the user will be sent email, push etc.
-                profileUpdate.put("MSG-email", false);        // Disable email notifications
-                profileUpdate.put("MSG-push", true);          // Enable push notifications
-                profileUpdate.put("MSG-sms", false);          // Disable SMS notifications
-
-                ArrayList<String> stuff = new ArrayList<String>();
-                stuff.add("bag");
-                stuff.add("shoes");
-                profileUpdate.put("MyStuff", stuff);                        //ArrayList of Strings
-
-                String[] otherStuff = {"Jeans","Perfume"};
-                profileUpdate.put("MyStuff", otherStuff);                   //String Array
+        };
+        button4.setOnClickListener(myOnClickListener);
 
 
-                cleverTapAPI.onUserLogin(profileUpdate);
-            }
-        });
-        Intent intent = getIntent();
-        if(intent!=null){
-            String titleString = intent.getStringExtra("title");
-            title.setText(titleString);
-            String bodyString = intent.getStringExtra("body");
-            body.setText(bodyString);
-        }
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -454,10 +290,6 @@ public class MainActivity extends AppCompatActivity {
                 book12.setImageURL("http://forreadingaddicts.co.uk/wp-content/uploads/2016/03/Ruskin-Bond-Room-on-the-Roof-small-200x300.jpg");
                 booksArrayList.add(book12);
 
-//                HashMap<String, Object> profileUpdate = new HashMap<String, Object>();
-//                profileUpdate.put("Phone","+919167605320");
-//                cleverTapAPI.profile.push(profileUpdate);
-
                 Intent intent1 = new Intent(MainActivity.this,BookListActivity.class);
                 intent1.putParcelableArrayListExtra("BooksList",booksArrayList);
                 startActivity(intent1);
@@ -467,13 +299,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-//    @Override
-//    protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        callbackManager.onActivityResult(requestCode, resultCode, data);
-//    }
-
-    @Override
+  @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
